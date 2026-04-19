@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Spidy Video Downloader",
+  "version": "1.0",
+  "description": "Download videos from web pages",
+  "permissions": [
+    "downloads",
+    "activeTab",
+    "scripting",
+    "storage",
+    "webRequest"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ]
+}
